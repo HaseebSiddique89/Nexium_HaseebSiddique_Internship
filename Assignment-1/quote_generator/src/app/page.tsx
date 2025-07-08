@@ -74,8 +74,8 @@ export default function Home() {
   }
 
   return (
-    <main className="h-screen flex flex-col md:flex-row relative">
-      {/* Animated Background */}
+    <main className="min-h-screen flex flex-col md:flex-row relative">
+      {/* Animated Background - Applied to entire screen */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-950 via-gray-900 to-zinc-800">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%239C92AC%22 fill-opacity=%220.05%22%3E%3Ccircle cx=%2230%22 cy=%2230%22 r=%222%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-40"></div>
 
@@ -84,16 +84,19 @@ export default function Home() {
         <div className="absolute bottom-20 right-20 w-24 h-24 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full blur-xl opacity-20 animate-pulse delay-1000"></div>
         <div className="absolute top-1/2 left-10 w-16 h-16 bg-gradient-to-r from-green-400 to-blue-400 rounded-full blur-xl opacity-20 animate-bounce"></div>
         <div className="absolute bottom-1/3 right-1/4 w-20 h-20 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full blur-xl opacity-20 animate-pulse delay-500"></div>
+        
+        {/* Additional floating elements for mobile */}
+        <div className="absolute top-1/4 right-10 w-12 h-12 bg-gradient-to-r from-indigo-400 to-purple-400 rounded-full blur-xl opacity-20 animate-pulse delay-700"></div>
+        <div className="absolute bottom-1/4 left-1/3 w-14 h-14 bg-gradient-to-r from-pink-400 to-red-400 rounded-full blur-xl opacity-20 animate-bounce delay-300"></div>
       </div>
 
       {/* Main Content Area: Two Columns (or stacked on small screens) */}
-      <div className="relative z-10 flex flex-grow h-full items-stretch flex-col md:flex-row gap-8">
+      <div className="relative z-10 flex flex-grow items-stretch flex-col md:flex-row gap-8 py-8 md:py-0"> 
         {/* Left Column: Form and Header - No Scroll */}
-        {/* Adjusted padding for smaller screens (px-4) and increased py for overall vertical spacing */}
-        <div className="flex-1 h-full flex flex-col items-center justify-between py-10 px-4 md:pr-4"> 
-          <div className="w-full max-w-xl mx-auto flex flex-col items-center justify-between h-full">
+        <div className="flex flex-col items-center justify-center p-4 md:py-10 md:pr-4 md:flex-1"> 
+          <div className="w-full max-w-xl mx-auto flex flex-col items-center justify-center h-full space-y-8 md:space-y-0">
             {/* Header Section */}
-            <div className="text-center mb-auto space-y-6">
+            <div className="text-center mb-4 md:mb-auto space-y-6">
               <div className="inline-flex items-center justify-center p-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mb-4">
                 <div className="bg-white/20 backdrop-blur-sm rounded-full p-3">
                   <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -102,18 +105,16 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Removed whitespace-nowrap from h1 */}
               <h1 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-white via-purple-200 to-pink-200 bg-clip-text text-transparent leading-snug">
                 Quote <span className="text-3xl md:text-4xl">Generator</span>
               </h1>
 
-              <p className="text-base text-white/80 max-w-xl mx-auto leading-relaxed px-2"> {/* Added px-2 for tighter text on very small screens */}
+              <p className="text-base text-white/80 max-w-xl mx-auto leading-relaxed px-2">
                 Transform your thoughts into inspiration with our AI-powered quote generator.
                 <span className="block mt-2 text-purple-200">Discover wisdom that resonates with your soul.</span>
               </p>
 
-              {/* Changed to flex-col for small screens, then row for medium, and adjusted gap */}
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mt-8 text-sm"> {/* Added text-sm here too for smaller overall text */}
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mt-8 text-sm">
                 <div className="flex items-center gap-2 text-white/60">
                   <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
                   <span>Instant Generation</span>
@@ -130,19 +131,18 @@ export default function Home() {
             </div>
 
             {/* Form Card - Specific adjustments for width and centering */}
-            <div className="relative group w-[90%] max-w-sm mx-auto mt-auto mb-auto"> {/* Changed to w-[90%] and mx-auto */}
+            <div className="relative group w-full max-w-sm mx-auto px-0 mt-8 md:mt-auto mb-4 md:mb-auto"> 
               <div className="absolute -inset-1 bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
-              <div className="relative bg-white/10 backdrop-blur-2xl rounded-3xl p-5 md:p-6 border border-white/20 shadow-2xl">
+              <div className="relative bg-white/5 backdrop-blur-2xl rounded-3xl p-5 md:p-6 border border-white/10 shadow-2xl">
                 <QuoteForm onGenerateQuotes={handleGenerateQuotes} loading={loading} />
               </div>
             </div>
 
             {/* Bottom Stats */}
-            {/* Adjusted font sizes and added px-4 for padding */}
-            <div className="mt-auto grid grid-cols-3 gap-4 text-center w-full mb-8 md:mb-0 px-4">
-              <div className="space-y-1"> {/* Reduced space-y for tighter packing */}
-                <div className="text-lg sm:text-xl font-bold text-white">10K+</div> {/* Adjusted font size */}
-                <div className="text-xs sm:text-sm text-white/60 leading-tight">Quotes Generated</div> {/* Adjusted font size and line height */}
+            <div className="mt-4 md:mt-auto grid grid-cols-3 gap-4 text-center w-full px-4 mb-4 md:mb-0">
+              <div className="space-y-1">
+                <div className="text-lg sm:text-xl font-bold text-white">10K+</div>
+                <div className="text-xs sm:text-sm text-white/60 leading-tight">Quotes Generated</div>
               </div>
               <div className="space-y-1">
                 <div className="text-lg sm:text-xl font-bold text-white">50+</div>
@@ -156,9 +156,8 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Right Column: Quotes Display - Scrollable with custom scrollbar (border removed) */}
-        {/* Added px-4 for padding on smaller screens */}
-        <div className="flex-1 h-full flex flex-col py-8 px-4 md:pl-4 overflow-y-auto custom-scrollbar [-ms-overflow-style:none] [scrollbar-width:none] md:pr-0 md:rounded-l-3xl py-25">
+        {/* Right Column: Quotes Display - Removed background override */}
+        <div className="flex-1 flex flex-col py-4 px-4 md:py-8 md:pl-4 overflow-y-auto custom-scrollbar [-ms-overflow-style:none] [scrollbar-width:none] md:pr-0 min-h-0">
           <div className="w-full max-w-xl mx-auto h-full">
             <QuotesDisplay
               quotes={quotes}
