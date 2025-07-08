@@ -4,7 +4,6 @@
 import { useState } from 'react'
 import QuoteForm from '@/components/QuoteForm'
 import QuotesDisplay from '@/components/QuotesDisplay'
-import ThemeToggle from '@/components/ThemeToggle'
 
 const quotesData: Record<string, string[]> = {
   motivation: [
@@ -77,7 +76,7 @@ export default function Home() {
   return (
     <main className="h-screen flex flex-col md:flex-row relative">
       {/* Animated Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-950 via-gray-900 to-zinc-800 dark:from-gray-900 dark:via-purple-900 dark:to-indigo-900">
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-950 via-gray-900 to-zinc-800">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%239C92AC%22 fill-opacity=%220.05%22%3E%3Ccircle cx=%2230%22 cy=%2230%22 r=%222%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-40"></div>
 
         {/* Floating Elements */}
@@ -130,7 +129,7 @@ export default function Home() {
             {/* Form Card */}
             <div className="relative group w-full max-w-sm mt-auto mb-auto">
               <div className="absolute -inset-1 bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
-              <div className="relative bg-white/10 dark:bg-black/20 backdrop-blur-2xl rounded-3xl p-5 md:p-6 border border-white/20 dark:border-white/10 shadow-2xl">
+              <div className="relative bg-white/10 backdrop-blur-2xl rounded-3xl p-5 md:p-6 border border-white/20 shadow-2xl">
                 <QuoteForm onGenerateQuotes={handleGenerateQuotes} loading={loading} />
               </div>
             </div>
@@ -168,14 +167,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-
-      {/* Theme Toggle - Repositioned to top-right of the entire screen */}
-      <div className="absolute top-6 right-6 z-20">
-        <div className="backdrop-blur-xl bg-white/10 dark:bg-black/10 rounded-full p-2 border border-white/20 dark:border-white/10 shadow-2xl">
-          <ThemeToggle />
-        </div>
-      </div>
-
     </main>
   )
 }

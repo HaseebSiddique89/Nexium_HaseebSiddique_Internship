@@ -19,7 +19,6 @@ function Switch({
         
         // Background colors based on state
         "data-[state=unchecked]:bg-input data-[state=checked]:bg-primary", // Fallback for normal theme (non-gradient)
-        "dark:data-[state=unchecked]:bg-input/80 dark:data-[state=checked]:bg-primary", // Fallback for dark theme
         
         className // Apply additional classes from props
       )}
@@ -33,9 +32,6 @@ function Switch({
           
           // Thumb background color (default/light theme)
           "bg-background", 
-          
-          // Thumb background color (dark theme) - often primary-foreground for checked in dark
-          "dark:data-[state=unchecked]:bg-foreground dark:data-[state=checked]:bg-primary-foreground",
           
           // Thumb position based on state
           "data-[state=checked]:translate-x-[calc(100%-2px)] data-[state=unchecked]:translate-x-0"

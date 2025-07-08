@@ -69,26 +69,26 @@ export default function QuoteForm({ onGenerateQuotes, loading }: QuoteFormProps)
             placeholder="Enter your topic"
             value={topic}
             onChange={(e) => setTopic(e.target.value)}
-            className="flex-1 h-10 pl-10 pr-4 bg-white/10 dark:bg-black/20 backdrop-blur-xl border-white/20 dark:border-white/10 rounded-2xl text-white placeholder-white/50 text-sm focus:border-purple-400 focus:ring-purple-400/30 transition-all duration-300" // Changed h-12 to h-10, text-base to text-sm, pl-12 to pl-10
+            className="flex-1 h-10 pl-10 pr-4 bg-white/10 backdrop-blur-xl border-white/20 rounded-2xl text-white placeholder-white/50 text-sm focus:border-purple-400 focus:ring-purple-400/30 transition-all duration-300"
           />
-          <Sparkles className="absolute left-3 top-1/2 transform -translate-y-1/2 text-white/50 w-4 h-4" /> {/* Adjusted left and size */}
+          <Sparkles className="absolute left-3 top-1/2 transform -translate-y-1/2 text-white/50 w-4 h-4" />
           
           <Button
             type="button"
             onClick={() => setShowSuggestions(prev => !prev)}
-            className="ml-2 h-10 px-3 bg-white/10 dark:bg-black/20 backdrop-blur-xl border-white/20 dark:border-white/10 rounded-2xl text-white/80 hover:text-white transition-all duration-300" // Changed h-12 to h-10, px-4 to px-3
+            className="ml-2 h-10 px-3 bg-white/10 backdrop-blur-xl border-white/20 rounded-2xl text-white/80 hover:text-white transition-all duration-300"
           >
-            <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${showSuggestions ? 'rotate-180' : ''}`} /> {/* Changed w-5 h-5 to w-4 h-4 */}
+            <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${showSuggestions ? 'rotate-180' : ''}`} />
           </Button>
 
           {showSuggestions && (
-            <div className="absolute top-full right-0 mt-2 w-full md:w-[calc(100%-50px)] min-w-[180px] bg-white/10 dark:bg-black/20 backdrop-blur-xl rounded-2xl border border-white/20 dark:border-white/10 shadow-2xl z-10 overflow-hidden"> {/* Adjusted width calc and min-width */}
+            <div className="absolute top-full right-0 mt-2 w-full md:w-[calc(100%-50px)] min-w-[180px] bg-white/10 backdrop-blur-xl rounded-2xl border border-white/20 shadow-2xl z-10 overflow-hidden">
               {suggestions.map((suggestion, index) => (
                 <button
                   key={index}
                   type="button"
                   onClick={() => selectSuggestion(suggestion)}
-                  className="w-full text-left px-4 py-2 text-white/80 hover:bg-white/10 dark:hover:bg-white/5 transition-colors duration-200 first:rounded-t-2xl last:rounded-b-2xl capitalize text-sm" // Changed py-3 to py-2, added text-sm
+                  className="w-full text-left px-4 py-2 text-white/80 hover:bg-white/10 transition-colors duration-200 first:rounded-t-2xl last:rounded-b-2xl capitalize text-sm"
                 >
                   {suggestion}
                 </button>
@@ -99,17 +99,17 @@ export default function QuoteForm({ onGenerateQuotes, loading }: QuoteFormProps)
 
         <Button 
           type="submit" 
-          className="w-full h-10 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-semibold text-sm rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5" // Changed h-12 to h-10, text-base to text-sm
+          className="w-full h-10 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-semibold text-sm rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5"
           disabled={loading || !topic.trim()}
         >
           {loading ? (
-            <div className="flex items-center justify-center gap-2"> {/* Reduced gap */}
-              <Loader2 className="animate-spin w-4 h-4" /> {/* Reduced size */}
+            <div className="flex items-center justify-center gap-2">
+              <Loader2 className="animate-spin w-4 h-4" />
               <span>Generating Magic...</span>
             </div>
           ) : (
-            <div className="flex items-center justify-center gap-2"> {/* Reduced gap */}
-              <Zap className="w-4 h-4" /> {/* Reduced size */}
+            <div className="flex items-center justify-center gap-2">
+              <Zap className="w-4 h-4" />
               <span>Generate Quotes</span>
             </div>
           )}

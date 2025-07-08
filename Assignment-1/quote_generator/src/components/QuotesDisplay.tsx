@@ -35,7 +35,7 @@ export default function QuotesDisplay({
 
   // Content for when there are no quotes, loading, or an error
   const emptyStateContent = (
-    <div className="flex flex-col items-center justify-center h-full text-center p-8 bg-white/5 dark:bg-black/5 rounded-2xl border border-white/10 dark:border-white/5 shadow-inner">
+    <div className="flex flex-col items-center justify-center h-full text-center p-8 bg-white/5 rounded-2xl border border-white/10 shadow-inner">
       {loading ? (
         <div className="flex flex-col items-center justify-center">
           <div className="relative mb-6">
@@ -74,7 +74,7 @@ export default function QuotesDisplay({
           {quotes.map((quote, index) => (
             <Card 
               key={index} 
-              className="bg-white/10 dark:bg-black/20 backdrop-blur-xl border border-white/20 dark:border-white/10 rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-purple-400 dark:hover:border-purple-600 hover:bg-gradient-to-r hover:from-purple-500/30 hover:to-pink-500/30 dark:hover:from-purple-900/60 dark:hover:to-indigo-900/60" // Added hover gradient background
+              className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-purple-400 hover:bg-gradient-to-r hover:from-purple-500/30 hover:to-pink-500/30"
             >
               <CardContent className="p-6">
                 <div className="flex items-start gap-4">
