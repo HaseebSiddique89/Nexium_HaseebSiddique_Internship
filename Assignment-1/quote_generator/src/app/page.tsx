@@ -74,8 +74,8 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen flex flex-col md:flex-row relative">
-      {/* Animated Background - Applied to entire screen */}
+    <main className="h-screen flex flex-col md:flex-row relative">
+      {/* Animated Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-950 via-gray-900 to-zinc-800">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%239C92AC%22 fill-opacity=%220.05%22%3E%3Ccircle cx=%2230%22 cy=%2230%22 r=%222%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-40"></div>
 
@@ -84,15 +84,13 @@ export default function Home() {
         <div className="absolute bottom-20 right-20 w-24 h-24 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full blur-xl opacity-20 animate-pulse delay-1000"></div>
         <div className="absolute top-1/2 left-10 w-16 h-16 bg-gradient-to-r from-green-400 to-blue-400 rounded-full blur-xl opacity-20 animate-bounce"></div>
         <div className="absolute bottom-1/3 right-1/4 w-20 h-20 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full blur-xl opacity-20 animate-pulse delay-500"></div>
-        
-        {/* Additional floating elements for mobile */}
-        <div className="absolute top-1/4 right-10 w-12 h-12 bg-gradient-to-r from-indigo-400 to-purple-400 rounded-full blur-xl opacity-20 animate-pulse delay-700"></div>
-        <div className="absolute bottom-1/4 left-1/3 w-14 h-14 bg-gradient-to-r from-pink-400 to-red-400 rounded-full blur-xl opacity-20 animate-bounce delay-300"></div>
       </div>
 
       {/* Main Content Area: Two Columns (or stacked on small screens) */}
+      {/* Removed h-full from this div to allow flex-grow to manage height better */}
       <div className="relative z-10 flex flex-grow items-stretch flex-col md:flex-row gap-8 py-8 md:py-0"> 
         {/* Left Column: Form and Header - No Scroll */}
+        {/* Changed flex-1 to md:flex-1 to allow content to dictate height on mobile */}
         <div className="flex flex-col items-center justify-center p-4 md:py-10 md:pr-4 md:flex-1"> 
           <div className="w-full max-w-xl mx-auto flex flex-col items-center justify-center h-full space-y-8 md:space-y-0">
             {/* Header Section */}
@@ -133,7 +131,7 @@ export default function Home() {
             {/* Form Card - Specific adjustments for width and centering */}
             <div className="relative group w-full max-w-sm mx-auto px-0 mt-8 md:mt-auto mb-4 md:mb-auto"> 
               <div className="absolute -inset-1 bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
-              <div className="relative bg-white/5 backdrop-blur-2xl rounded-3xl p-5 md:p-6 border border-white/10 shadow-2xl">
+              <div className="relative bg-white/10 backdrop-blur-2xl rounded-3xl p-5 md:p-6 border border-white/20 shadow-2xl">
                 <QuoteForm onGenerateQuotes={handleGenerateQuotes} loading={loading} />
               </div>
             </div>
@@ -156,7 +154,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Right Column: Quotes Display - Removed background override */}
+        {/* Right Column: Quotes Display - Removed h-full and py-25 */}
         <div className="flex-1 flex flex-col py-4 px-4 md:py-8 md:pl-4 overflow-y-auto custom-scrollbar [-ms-overflow-style:none] [scrollbar-width:none] md:pr-0 min-h-0">
           <div className="w-full max-w-xl mx-auto h-full">
             <QuotesDisplay
