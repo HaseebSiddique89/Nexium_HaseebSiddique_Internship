@@ -89,7 +89,7 @@ export default function Home() {
       {/* Main Content Area: Two Columns (or stacked on small screens) */}
       <div className="relative z-10 flex flex-grow h-full items-stretch flex-col md:flex-row gap-8">
         {/* Left Column: Form and Header - No Scroll */}
-        <div className="flex-1 h-full flex flex-col items-center justify-between py-8 px-6 md:pr-4">
+        <div className="flex-1 h-full flex flex-col items-center justify-between py-8 px-6 md:pr-4 py-10">
           <div className="w-full max-w-xl mx-auto flex flex-col items-center justify-between h-full">
             {/* Header Section */}
             <div className="text-center mb-auto space-y-6">
@@ -101,7 +101,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <h1 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-white via-purple-200 to-pink-200 bg-clip-text text-transparent leading-snug whitespace-nowrap">
+              <h1 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-white via-purple-200 to-pink-200 bg-clip-text text-transparent leading-snug">
                 Quote <span className="text-3xl md:text-4xl">Generator</span>
               </h1>
 
@@ -110,7 +110,7 @@ export default function Home() {
                 <span className="block mt-2 text-purple-200">Discover wisdom that resonates with your soul.</span>
               </p>
 
-              <div className="flex items-center justify-center gap-8 mt-8">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mt-8">
                 <div className="flex items-center gap-2 text-white/60">
                   <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
                   <span className="text-sm">Instant Generation</span>
