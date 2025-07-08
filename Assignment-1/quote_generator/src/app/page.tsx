@@ -89,7 +89,8 @@ export default function Home() {
       {/* Main Content Area: Two Columns (or stacked on small screens) */}
       <div className="relative z-10 flex flex-grow h-full items-stretch flex-col md:flex-row gap-8">
         {/* Left Column: Form and Header - No Scroll */}
-        <div className="flex-1 h-full flex flex-col items-center justify-between py-8 px-6 md:pr-4 py-10">
+        {/* Adjusted padding for smaller screens (px-4) and increased py for overall vertical spacing */}
+        <div className="flex-1 h-full flex flex-col items-center justify-between py-10 px-4 md:pr-4"> 
           <div className="w-full max-w-xl mx-auto flex flex-col items-center justify-between h-full">
             {/* Header Section */}
             <div className="text-center mb-auto space-y-6">
@@ -101,33 +102,35 @@ export default function Home() {
                 </div>
               </div>
 
+              {/* Removed whitespace-nowrap from h1 */}
               <h1 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-white via-purple-200 to-pink-200 bg-clip-text text-transparent leading-snug">
                 Quote <span className="text-3xl md:text-4xl">Generator</span>
               </h1>
 
-              <p className="text-base text-white/80 max-w-xl mx-auto leading-relaxed">
+              <p className="text-base text-white/80 max-w-xl mx-auto leading-relaxed px-2"> {/* Added px-2 for tighter text on very small screens */}
                 Transform your thoughts into inspiration with our AI-powered quote generator.
                 <span className="block mt-2 text-purple-200">Discover wisdom that resonates with your soul.</span>
               </p>
 
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mt-8">
+              {/* Changed to flex-col for small screens, then row for medium, and adjusted gap */}
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mt-8 text-sm"> {/* Added text-sm here too for smaller overall text */}
                 <div className="flex items-center gap-2 text-white/60">
                   <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                  <span className="text-sm">Instant Generation</span>
+                  <span>Instant Generation</span>
                 </div>
                 <div className="flex items-center gap-2 text-white/60">
                   <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse delay-300"></div>
-                  <span className="text-sm">Premium Quality</span>
+                  <span>Premium Quality</span>
                 </div>
                 <div className="flex items-center gap-2 text-white/60">
                   <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse delay-700"></div>
-                  <span className="text-sm">Multiple Topics</span>
+                  <span>Multiple Topics</span>
                 </div>
               </div>
             </div>
 
-            {/* Form Card */}
-            <div className="relative group w-full max-w-sm mt-auto mb-auto">
+            {/* Form Card - Specific adjustments for width and centering */}
+            <div className="relative group w-[90%] max-w-sm mx-auto mt-auto mb-auto"> {/* Changed to w-[90%] and mx-auto */}
               <div className="absolute -inset-1 bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
               <div className="relative bg-white/10 backdrop-blur-2xl rounded-3xl p-5 md:p-6 border border-white/20 shadow-2xl">
                 <QuoteForm onGenerateQuotes={handleGenerateQuotes} loading={loading} />
@@ -135,25 +138,27 @@ export default function Home() {
             </div>
 
             {/* Bottom Stats */}
-            <div className="mt-auto grid grid-cols-3 gap-6 text-center w-full mb-8 md:mb-0">
-              <div className="space-y-2">
-                <div className="text-xl font-bold text-white">10K+</div>
-                <div className="text-sm text-white/60">Quotes Generated</div>
+            {/* Adjusted font sizes and added px-4 for padding */}
+            <div className="mt-auto grid grid-cols-3 gap-4 text-center w-full mb-8 md:mb-0 px-4">
+              <div className="space-y-1"> {/* Reduced space-y for tighter packing */}
+                <div className="text-lg sm:text-xl font-bold text-white">10K+</div> {/* Adjusted font size */}
+                <div className="text-xs sm:text-sm text-white/60 leading-tight">Quotes Generated</div> {/* Adjusted font size and line height */}
               </div>
-              <div className="space-y-2">
-                <div className="text-xl font-bold text-white">50+</div>
-                <div className="text-sm text-white/60">Categories</div>
+              <div className="space-y-1">
+                <div className="text-lg sm:text-xl font-bold text-white">50+</div>
+                <div className="text-xs sm:text-sm text-white/60 leading-tight">Categories</div>
               </div>
-              <div className="space-y-2">
-                <div className="text-xl font-bold text-white">99.9%</div>
-                <div className="text-sm text-white/60">Satisfaction</div>
+              <div className="space-y-1">
+                <div className="text-lg sm:text-xl font-bold text-white">99.9%</div>
+                <div className="text-xs sm:text-sm text-white/60 leading-tight">Satisfaction</div>
               </div>
             </div>
           </div>
         </div>
 
         {/* Right Column: Quotes Display - Scrollable with custom scrollbar (border removed) */}
-        <div className="flex-1 h-full flex flex-col py-8 px-6 md:pl-4 overflow-y-auto custom-scrollbar [-ms-overflow-style:none] [scrollbar-width:none] md:pr-0 md:rounded-l-3xl py-25">
+        {/* Added px-4 for padding on smaller screens */}
+        <div className="flex-1 h-full flex flex-col py-8 px-4 md:pl-4 overflow-y-auto custom-scrollbar [-ms-overflow-style:none] [scrollbar-width:none] md:pr-0 md:rounded-l-3xl py-25">
           <div className="w-full max-w-xl mx-auto h-full">
             <QuotesDisplay
               quotes={quotes}
