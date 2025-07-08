@@ -82,13 +82,13 @@ export default function QuoteForm({ onGenerateQuotes, loading }: QuoteFormProps)
           </Button>
 
           {showSuggestions && (
-            <div className="absolute top-full right-0 mt-2 w-full md:w-[calc(100%-50px)] min-w-[180px] bg-white/10 backdrop-blur-xl rounded-2xl border border-white/20 shadow-2xl z-10 overflow-hidden">
+            <div className="absolute top-full right-0 mt-2 w-full md:w-[calc(100%-50px)] min-w-[180px] bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl border border-gray-700 shadow-2xl z-10 overflow-hidden">
               {suggestions.map((suggestion, index) => (
                 <button
                   key={index}
                   type="button"
                   onClick={() => selectSuggestion(suggestion)}
-                  className="w-full text-left px-4 py-2 text-white/80 hover:bg-white/10 transition-colors duration-200 first:rounded-t-2xl last:rounded-b-2xl capitalize text-sm"
+                  className="w-full text-left px-4 py-2 text-white/80 hover:bg-white/5 transition-colors duration-200 first:rounded-t-2xl last:rounded-b-2xl capitalize text-sm"
                 >
                   {suggestion}
                 </button>
