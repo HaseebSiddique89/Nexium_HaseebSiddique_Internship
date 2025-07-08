@@ -1,2 +1,1 @@
-# Nexium-HaseebSiddique-Internship
-
+# Nexium-HaseebSiddique-QuoteGenerator
