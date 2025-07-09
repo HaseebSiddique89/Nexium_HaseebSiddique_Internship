@@ -6,10 +6,10 @@ The app offers a smooth, responsive way to generate motivational and insightful 
 
 ## 🧰 Tools & Technologies Used:
 
-Next.js – Full-stack React framework (App Router-based)
-Tailwind CSS – Utility-first CSS framework for styling
-ShadCN UI – Pre-built, accessible component library based on Radix UI
-pnpm – Fast and efficient JavaScript package manager
+- Next.js – Full-stack React framework (App Router-based)
+- Tailwind CSS – Utility-first CSS framework for styling
+- ShadCN UI – Pre-built, accessible component library based on Radix UI
+- pnpm – Fast and efficient JavaScript package manager
 
 ## 🌟 Features:
 
