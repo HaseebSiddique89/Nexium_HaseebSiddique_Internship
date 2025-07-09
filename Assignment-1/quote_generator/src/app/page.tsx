@@ -155,7 +155,7 @@ export default function Home() {
         </div>
 
         {/* Right Column: Quotes Display - Removed h-full and py-25 */}
-        <div className="flex-1 flex flex-col py-4 px-4 md:py-8 md:pl-4 overflow-y-auto custom-scrollbar [-ms-overflow-style:none] [scrollbar-width:none] md:pr-0 min-h-0">
+        <div className="flex-1 flex flex-col py-4 px-4 md:py-8 md:pl-4 overflow-y-auto custom-scrollbar [-ms-overflow-style:none] [scrollbar-width:none] md:pr-0 min-h-0 mt-10">
           <div className="w-full max-w-xl mx-auto h-full">
             <QuotesDisplay
               quotes={quotes}
