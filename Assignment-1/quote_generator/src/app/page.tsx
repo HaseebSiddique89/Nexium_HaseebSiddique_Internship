@@ -92,7 +92,7 @@ export default function Home() {
         {/* Left Column: Form and Header - No Scroll */}
         {/* Changed flex-1 to md:flex-1 to allow content to dictate height on mobile */}
         <div className="flex flex-col items-center justify-center p-4 md:py-10 md:pr-4 md:flex-1"> 
-          <div className="w-full max-w-xl mx-auto flex flex-col items-center justify-center h-full space-y-8 md:space-y-0">
+          <div className="w-full max-w-xl mx-auto flex flex-col items-center justify-start gap-4">
             {/* Header Section */}
             <div className="text-center mb-4 md:mb-auto space-y-6">
               <div className="inline-flex items-center justify-center p-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mb-4">
@@ -129,7 +129,7 @@ export default function Home() {
             </div>
 
             {/* Form Card - Specific adjustments for width and centering */}
-            <div className="relative group w-full max-w-sm mx-auto px-0 mt-8 md:mt-auto mb-4 md:mb-auto"> 
+            <div className="relative group w-full max-w-sm mx-auto px-0 my-2"> 
               <div className="absolute -inset-1 bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
               <div className="relative bg-white/10 backdrop-blur-2xl rounded-3xl p-5 md:p-6 border border-white/20 shadow-2xl">
                 <QuoteForm onGenerateQuotes={handleGenerateQuotes} loading={loading} />
@@ -137,7 +137,7 @@ export default function Home() {
             </div>
 
             {/* Bottom Stats */}
-            <div className="mt-4 md:mt-auto grid grid-cols-3 gap-4 text-center w-full px-4 mb-4 md:mb-0">
+            <div className="grid grid-cols-3 gap-4 text-center w-full px-4 my-2">
               <div className="space-y-1">
                 <div className="text-lg sm:text-xl font-bold text-white">10K+</div>
                 <div className="text-xs sm:text-sm text-white/60 leading-tight">Quotes Generated</div>
